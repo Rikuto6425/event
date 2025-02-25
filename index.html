@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>イベントだよお～！</title>
+    <script>
+        // Google ドライブのダウンロードリンク
+        const files = {
+            "file1.pdf": "./html2",
+            "file2.pdf": "./html3",
+            "file3.pdf": "./html4"
+        };
+
+        // ファイルごとのパスワード設定
+        const passwords = {
+            "file1.pdf": "ちゃろー",
+            "file2.pdf": "ごちうさ",
+            "file3.pdf": "おにまい"
+        };
+
+        function requestPassword(fileName) {
+            let userPassword = prompt(fileName + " のパスワードを入力してね！:");
+
+            if (userPassword === passwords[fileName]) {
+                alert("移動するよ！");
+                window.location.href = files[fileName]; // Google ドライブのダウンロードリンクを開く
+            } else {
+                alert("パスワードが違うよお＞＜");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>ちゃろー☆ダウンロードするファイルを選択してよ～！</h3>
+    <ul>
+        <li><a href="#" onclick="requestPassword('file1.pdf')">漆黒のバイブル</a></li>
+        <li><a href="#" onclick="requestPassword('file2.pdf')">奄美のプリンス</a></li>
+        <li><a href="#" onclick="requestPassword('file3.pdf')">Give me chcolate</a></li>
+    </ul>
+</body>
+</html>
