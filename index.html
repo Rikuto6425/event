@@ -23,7 +23,6 @@
             let userPassword = prompt(fileName + " のパスワードを入力してね！:");
 
             if (userPassword === passwords[fileName]) {
-                alert("移動するよ！");
                 window.location.href = files[fileName]; // Google ドライブのダウンロードリンクを開く
             } else {
                 alert("パスワードが違うよお＞＜");
